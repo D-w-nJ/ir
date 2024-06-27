@@ -10,6 +10,7 @@ public class AtomicSyncTest {
             System.out.println("Thread1 starts");
             for (int i = 0; i < 10000; i++) {
                 var.incrementAndGet();
+                // var.set(var.get() + 1);  // 이런 코드는 원자성을 보장하지 않는다.
             }
             System.out.println("Thread1 finished");
         });
