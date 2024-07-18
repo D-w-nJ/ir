@@ -1,7 +1,7 @@
 package thread_sync;
 
 public class ThreadSyncUsingStatic {
-    boolean flag = true;
+    static boolean flag = true;
 
     public void test() {
         new Thread(() -> {
