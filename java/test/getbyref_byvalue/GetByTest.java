@@ -55,4 +55,37 @@ class GetByTest {
         Assertions.assertNotEquals(chickenWeight - GetBy.CHICKEN_BONE_WIGHT, chicken.getWeight());
     }
 
+    @Test
+    @DisplayName("get by wrapper - 2")
+    void testGetByWrapper2() {
+        // given
+        Integer origin = 100;
+        // int addressOrigin = System.identityHashCode(origin);
+        // System.out.println("Address of object: " + Integer.toHexString(addressOrigin));
+        int copy = origin;
+        int setTo = -1;
+
+        // when
+        GetBy.setUsingWrapper(origin, setTo);
+
+        // then
+        // Assertions.assertNotEquals(origin, copy);
+        Assertions.assertEquals(origin, copy);
+    }
+
+    @Test
+    @DisplayName("get by MyInteger")
+    void testMyInteger() {
+        // given
+        MyInteger myInteger = new MyInteger(100);
+        int copy = myInteger.getValue();
+        int setTo = -1;
+
+        // when
+        GetBy.setUsingMyInteger(myInteger, setTo);
+
+        // then
+        Assertions.assertNotEquals(copy, myInteger.getValue());
+        System.out.println(myInteger.getValue());
+    }
 }

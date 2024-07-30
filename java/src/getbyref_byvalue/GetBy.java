@@ -21,4 +21,15 @@ public class GetBy {
         chickenWeight = Integer.valueOf(chickenWeight - CHICKEN_BONE_WIGHT);
         boneless = Boolean.valueOf(true);
     }
+
+    public static void setUsingWrapper(Integer input, int value){
+//        int address = System.identityHashCode(input);
+//        System.out.println("Address of object: " + Integer.toHexString(address));
+        input = Integer.valueOf(value);
+    }
+
+    public static void setUsingMyInteger(MyInteger myInteger, int value){
+        // myInteger = new MyInteger(value);  // 원본 데이터가 바뀌지 않음
+        myInteger.setValue(value);
+    }
 }
